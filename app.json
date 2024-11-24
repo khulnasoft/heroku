@@ -1,0 +1,58 @@
+{
+  "name": "KhulnaSoft Fair Web Analytics",
+  "description": "Let your users access their data. Gain valuable insights at the same time. Open, lightweight, self hosted and free.",
+  "repository": "https://github.com/khulnasoft/heroku",
+  "logo": "https://khulnasoft.github.io/press-kit/khulnasoft-icon/khulnasoft-icon-white-orange.png",
+  "keywords": ["analytics", "privacy", "self-hosted"],
+  "addons": [
+    {
+      "plan": "heroku-postgresql:hobby-dev"
+    }
+  ],
+  "website": "https://www.khulnasoft.dev",
+  "stack": "container",
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "success_url": "/setup/",
+  "env": {
+    "KHULNASOFT_SMTP_HOST": {
+      "description": "The SMTP host to use for sending transactional email. (We recommend setting this now, but you could also add it later).",
+      "required": false
+    },
+    "KHULNASOFT_SMTP_PORT": {
+      "description": "The port the SMTP host listens on. (We recommend setting this now, but you could also add it later).",
+      "required": false,
+      "value": "587"
+    },
+    "KHULNASOFT_SMTP_USER": {
+      "description": "The SMTP username to use for sending transactional email. (We recommend setting this now, but you could also add it later).",
+      "required": false
+    },
+    "KHULNASOFT_SMTP_PASSWORD": {
+      "description": "The SMTP password to use for sending transactional email. (We recommend setting this now, but you could also add it later).",
+      "required": false
+    },
+    "KHULNASOFT_SMTP_SENDER": {
+      "description": "The 'from' address to use for sending transactional email. (We recommend setting this now, but you could also add it later).",
+      "required": false
+    },
+    "KHULNASOFT_APP_DEPLOYTARGET": {
+      "description": "Allow KhulnaSoft to pick up configuration specified by the Heroku runtime. (You do not need to change this).",
+      "value": "heroku",
+      "required": true
+    },
+    "KHULNASOFT_DATABASE_DIALECT": {
+      "description": "Use a Postgres database. (You do not need to change this unless you provision a different database).",
+      "value": "postgres",
+      "required": true
+    },
+    "APP_SECRET": {
+      "description": "A secret key for verifying the integrity of signed cookies and URL tokens",
+      "generator": "secret"
+    }
+  }
+}
